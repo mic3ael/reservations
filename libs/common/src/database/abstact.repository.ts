@@ -22,7 +22,7 @@ export abstract class AbstractRepository<TDocument extends AbstractDocument> {
       throw new NotFoundException('Document not found.');
     }
 
-    return document;
+    return document as unknown as TDocument;
   }
 
   async findOneAndUpdate(
